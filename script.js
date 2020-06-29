@@ -84,31 +84,31 @@ class BangunDatar {
 
 //Luas Persegi
 const persegi1 = new BangunDatar(3, 3);
-console.log(persegi1.persegiLuas());
+console.log("Luas Persegi: " + persegi1.persegiLuas());
 //Keliling Persegi
 const persegi2 = new BangunDatar(3, 3);
-console.log(persegi2.persegiKeliling());
+console.log("Kel Persegi: " + persegi2.persegiKeliling());
 
 //Luas PersegiPanjang
 const persegiPan1 = new BangunDatar(null, null, 4, 3);
-console.log(persegiPan1.persegiPanjangLuas());
+console.log("Luas Persegi Panjang: " + persegiPan1.persegiPanjangLuas());
 //Keliling PersegiPanjang
 const persegiPan2 = new BangunDatar(null, null, 4, 3);
-console.log(persegiPan2.persegiPanjangKeliling());
+console.log("Kel  Persegi Panjang: " + persegiPan2.persegiPanjangKeliling());
 
 //Luas Siku-Siku
 const sikuSiku1 = new BangunDatar(null, 4, null, null, 3, null);
-console.log(sikuSiku1.segitigaLuasSiku());
+console.log("Luas Segitiga Siku2: " + sikuSiku1.segitigaLuasSiku());
 //Keliling Siku-Siku
 const sikuSiku2 = new BangunDatar(3, 3, 3);
-console.log(sikuSiku2.segitigaKeliling());
+console.log("Kel Segitiga Siku2: " + sikuSiku2.segitigaKeliling());
 
 //Luas Lingkaran
 const Lingkaran1 = new BangunDatar(null, null, null, null, null, 4, 3);
-console.log(Lingkaran1.lingkaranLuas());
+console.log("Luas Lingkaran: " + Lingkaran1.lingkaranLuas());
 //Keliling Lingkaran
 const Lingkaran2 = new BangunDatar(null, null, null, null, null, 4);
-console.log(Lingkaran2.lingkaranKel());
+console.log("Kel Lingkaran: " + Lingkaran2.lingkaranKel());
 
 // //Volume Kubus
 // const volKub = new Volume(3, 3, 3);
