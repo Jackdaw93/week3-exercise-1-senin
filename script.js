@@ -1,12 +1,11 @@
 class BangunDatar {
-  constructor(sisi, tinggi, lebar, panjang, alas, jari, asli) {
+  constructor(sisi, tinggi, lebar, panjang, alas, jari) {
     this.sisi = sisi;
     this.tinggi = tinggi;
     this.lebar = lebar;
     this.panjang = panjang;
     this.alas = alas;
     this.jari = jari;
-    this.asli = asli;
   }
   //Persegi
   persegiLuas() {
@@ -20,17 +19,17 @@ class BangunDatar {
 
   //Persegi panjang
   persegiPanjangLuas() {
-    let lPanjang = this.panjang * this.lebar;
+    let lPanjang = this.lebar * this.panjang;
     return lPanjang;
   }
   persegiPanjangKeliling() {
-    let KperP = 2 * this.panjang + this.lebar;
+    let KperP = 2 * (this.lebar + this.panjang);
     return KperP;
   }
 
   //Siku-Siku
-  segitigaSikuSiku() {
-    let Lsikusiku = (1 / 2) * this.alas * this.tinggi;
+  segitigaLuasSiku() {
+    let Lsikusiku = (1 / 2) * this.tinggi * this.alas;
     return Lsikusiku;
   }
   segitigaKeliling() {
@@ -40,73 +39,76 @@ class BangunDatar {
 
   //Lingkaran
   lingkaranLuas() {
-    let Lling = this.asli * this.jari * this.jari;
+    let Lling = Math.PI * this.jari * this.jari;
     return Lling;
   }
   lingkaranKel() {
-    let lingKel = this.asli * this.jari;
+    let lingKel = 2 * Math.PI * this.jari;
     return lingKel;
   }
 }
 
-class Volume extends BangunDatar {
-  constructor(sisi, panjang, lebar, tinggi, alas) {
-    super(sisi, panjang, lebar, tinggi, alas);
-  }
-  volKubus() {
-    let vol1 = this.sisi * this.sisi * this.sisi;
-    return vol1;
-  }
-  luasKubus() {
-    let luasK = 6 * this.sisi;
-    return luasK;
-  }
-  kelKubus() {
-    let kelKub = 12 * this.sisi;
-    return kelKub;
-  }
-  volBalok() {
-    let volBal = this.panjang * this.lebar * this.tinggi;
-    return volBal;
-  }
-  luasBalok() {
-    let luasBal =
-      2 *
-      (this.panjang * this.tinggi +
-        this.panjang * this.tinggi +
-        this.lebar * this.tinggi);
-    return luasBal;
-  }
-  kelBalok() {
-    let kelBal = 4 * (this.panjang + this.lebar + this.tinggi);
-    return kelBal;
-  }
-}
+// class Volume extends BangunDatar {
+//   constructor(sisi, panjang, lebar, tinggi, alas) {
+//     super(sisi, panjang, lebar, tinggi, alas);
+//   }
+//   volKubus() {
+//     let vol1 = this.sisi * this.sisi * this.sisi;
+//     return vol1;
+//   }
+//   luasKubus() {
+//     let luasK = 6 * this.sisi;
+//     return luasK;
+//   }
+//   kelKubus() {
+//     let kelKub = 12 * this.sisi;
+//     return kelKub;
+//   }
+//   volBalok() {
+//     let volBal = this.panjang * this.lebar * this.tinggi;
+//     return volBal;
+//   }
+//   luasBalok() {
+//     let luasBal =
+//       2 *
+//       (this.panjang * this.tinggi +
+//         this.panjang * this.tinggi +
+//         this.lebar * this.tinggi);
+//     return luasBal;
+//   }
+//   kelBalok() {
+//     let kelBal = 4 * (this.panjang + this.lebar + this.tinggi);
+//     return kelBal;
+//   }
+// }
 
 //Luas Persegi
 const persegi1 = new BangunDatar(3, 3);
 console.log(persegi1.persegiLuas());
 //Keliling Persegi
-console.log(persegi1.persegiKeliling());
+const persegi2 = new BangunDatar(3, 3);
+console.log(persegi2.persegiKeliling());
 
 //Luas PersegiPanjang
 const persegiPan1 = new BangunDatar(null, null, 4, 3);
 console.log(persegiPan1.persegiPanjangLuas());
 //Keliling PersegiPanjang
-console.log(persegiPan1.persegiPanjangKeliling());
+const persegiPan2 = new BangunDatar(null, null, 4, 3);
+console.log(persegiPan2.persegiPanjangKeliling());
 
 //Luas Siku-Siku
-const sikuSiku1 = new BangunDatar(null, null, null, null, 4, null, 3);
-console.log(sikuSiku1.segitigaSikuSiku());
+const sikuSiku1 = new BangunDatar(null, 4, null, null, 3, null);
+console.log(sikuSiku1.segitigaLuasSiku());
 //Keliling Siku-Siku
 const sikuSiku2 = new BangunDatar(3, 3, 3);
 console.log(sikuSiku2.segitigaKeliling());
 
 //Luas Lingkaran
-const Lingkaran1 = new BangunDatar(null, null, null, null, null, 4, 4, 3);
+const Lingkaran1 = new BangunDatar(null, null, null, null, null, 4, 3);
 console.log(Lingkaran1.lingkaranLuas());
 //Keliling Lingkaran
-console.log(Lingkaran1.lingkaranKel());
+const Lingkaran2 = new BangunDatar(null, null, null, null, null, 4);
+console.log(Lingkaran2.lingkaranKel());
 
 // //Volume Kubus
 // const volKub = new Volume(3, 3, 3);
